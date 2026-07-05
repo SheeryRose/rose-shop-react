@@ -11,6 +11,7 @@ export default function Navbar() {
       <div className="nav-links">
         <span onClick={() => navigate('/')}>Home</span>
         <span onClick={() => navigate('/shop')}>Shop</span>
+        <span onClick={() => navigate('/login')}>Login</span>
         <span className="cart-icon" onClick={() => navigate('/cart')}>
           🛒
           {cart.length > 0 && <span className="cart-badge">{cart.length}</span>}
