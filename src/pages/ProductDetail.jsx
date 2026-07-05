@@ -1,10 +1,13 @@
 import { useEffect, useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
+import { useCart } from '../context/CartContext'
 
 export default function ProductDetail() {
   const { id } = useParams()
   const navigate = useNavigate()
   const [product, setProduct] = useState(null)
+  const { addToCart } = useCart()
+  const [added, setAdded] = useState(false)
 
   useEffect(() => {
     fetch(`https://dummyjson.com/products/${id}`)
@@ -13,6 +16,11 @@ export default function ProductDetail() {
   }, [id])
 
   if (!product) return <p className="loading">Loading...</p>
+
+  function handleAddToCart() {
+    addToCart(product)
+    setAdded(true)
+  }
 
   return (
     <div className="product-detail">
@@ -26,6 +34,9 @@ export default function ProductDetail() {
           <p><strong>Brand:</strong> {product.brand}</p>
           <p><strong>Category:</strong> {product.category}</p>
           <p><strong>Rating:</strong> {product.rating} ⭐</p>
+          <button className="add-to-cart-btn" onClick={handleAddToCart}>
+            {added ? 'Added to Cart ✓' : 'Add to Cart'}
+          </button>
         </div>
       </div>
     </div>

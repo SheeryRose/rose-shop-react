@@ -83,6 +83,8 @@ body {
   padding: 24px;
 }
 
+
+
 .product-detail button {
   background: none;
   border: none;
@@ -130,4 +132,68 @@ body {
 .detail-info p {
   margin-bottom: 6px;
   font-size: 0.9rem;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 24px;
+  background: #be185d;
+  color: white;
+}
+
+.nav-logo {
+  font-size: 1.2rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 0.95rem;
+}
+
+.nav-links span {
+  cursor: pointer;
+}
+
+.nav-links span:hover {
+  opacity: 0.8;
+}
+
+.cart-icon {
+  position: relative;
+  font-size: 1.3rem;
+}
+
+.cart-badge {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  background: white;
+  color: #be185d;
+  font-size: 0.7rem;
+  font-weight: 700;
+  border-radius: 999px;
+  padding: 1px 5px;
+}
+
+.add-to-cart-btn {
+  margin-top: 16px;
+  padding: 10px 22px;
+  background: #be185d;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.add-to-cart-btn:hover {
+  background: #db2777;
+  color: white;
 }
